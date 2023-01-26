@@ -11,15 +11,15 @@ const ResultSearch = () => {
             <nav className="navbar-top">
                 <div className="nav-wrapper">
 
-                    <a href="#" className="yay-toggle">
+                    <Link to="#" className="yay-toggle">
                         <div className="burg1"></div>
                         <div className="burg2"></div>
                         <div className="burg3"></div>
-                    </a>
+                    </Link>
 
-                    <a href="#!" className="brand-logo">
+                    <Link href="#" className="brand-logo">
                         <img src="../assets/_con/images/logo.png" alt="Con"/>
-                    </a>
+                    </Link>
 
                     <ul>
 
@@ -45,15 +45,15 @@ const ResultSearch = () => {
 
                 <div className="top">
                     <div>
-                        <a href="#" className="yay-toggle">
+                        <Link to="#" className="yay-toggle">
                             <div className="burg1"></div>
                             <div className="burg2"></div>
                             <div className="burg3"></div>
-                        </a>
+                        </Link>
 
-                        <a href="#!" className="brand-logo">
+                        <Link to="#" className="brand-logo">
                             <img src="../assets/_con/images/logo-white.png" alt="Con"/>
-                        </a>
+                        </Link>
                     </div>
                 </div>
 
@@ -64,7 +64,7 @@ const ResultSearch = () => {
                         <ul>
                             <li className="label">Menu</li>
                             <li className="open">
-                                <Link to={'/dashboard'} className=" waves-effect waves-blue">
+                                <Link to={'/'} className=" waves-effect waves-blue">
 
                                     <i className="fa fa-dashboard"></i>
                                     <span>Dashboards</span>
@@ -98,11 +98,11 @@ const ResultSearch = () => {
 
                             <ul>
                                 <li>
-                                    <a href="#"><i className="fa fa-home"></i> Home</a> <i
+                                    <Link to="#"><i className="fa fa-home"></i> Home</Link> <i
                                     className="fa fa-angle-right"></i>
                                 </li>
 
-                                <li><a href='dashboard-v1.html'>Dashboard v1</a>
+                                <li><Link to='/'>Dashboard v1</Link>
                                 </li>
                             </ul>
                         </div>
@@ -138,7 +138,7 @@ const ResultSearch = () => {
                                         </thead>
                                         <tbody>
                                         {
-                                            data.data.map((elem, i) => {
+                                            data?.data?.map((elem, i) => {
                                                 if (i !== data.data.length - 1) {
                                                     return (
                                                         <tr>
@@ -149,6 +149,8 @@ const ResultSearch = () => {
                                                             <td>{`position ${elem.position}`}</td>
                                                         </tr>
                                                     )
+                                                }else{
+                                                    return null
                                                 }
 
                                             })

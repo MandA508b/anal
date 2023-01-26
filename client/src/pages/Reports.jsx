@@ -60,7 +60,7 @@ const Reports = () => {
                         <ul>
                             <li className="label">Menu</li>
                             <li className="open">
-                                <Link to={'/dashboard'} className=" waves-effect waves-blue">
+                                <Link to={'/'} className=" waves-effect waves-blue">
 
                                     <i className="fa fa-dashboard"></i>
                                     <span>Dashboards</span>

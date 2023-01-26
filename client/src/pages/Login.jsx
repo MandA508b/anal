@@ -3,6 +3,7 @@ import {setCredentials} from "../redux/auth/authSlice";
 import {useNavigate} from "react-router";
 import {useLoginMutation} from "../redux/auth/authApiSlice";
 import {useDispatch} from "react-redux";
+import {Link} from "react-router-dom";
 
 const Login = () => {
     const [email, setEmail] = useState('')
@@ -16,7 +17,7 @@ const Login = () => {
             try {
                 const data = await handleLogin({email, password: pass}).unwrap()
                 dispatch(setCredentials(data))
-                navigate('/dashboard')
+                navigate('/')
             } catch (e) {
                 console.log(e)
                 alert('Сталась помилка(')
@@ -30,13 +31,13 @@ const Login = () => {
 
                 <canvas id="bubble-canvas"></canvas>
 
-                <form action="dashboard.html" onSubmit={handleSubmit}>
+                <form action="/" onSubmit={handleSubmit}>
                     <div className="row links">
                         <div className="col s6 logo">
                             <img src="../assets/_con/images/logo-white.png" alt=""/>
                         </div>
-                        <div className="col s6 right-align"><strong>Sign In</strong> / <a href="page-sign-up.html">Sign
-                            Up</a>
+                        <div className="col s6 right-align"><strong>Sign In</strong> /
+                            <Link to="/registration">Sign Up</Link>
                         </div>
                     </div>
 
@@ -72,7 +73,7 @@ const Login = () => {
                     </div>
 
                     <div className="links right-align">
-                        <a href="page-forgot-password.html">Forgot Password?</a>
+                        <Link to="/login">Forgot Password?</Link>
                     </div>
 
                 </form>

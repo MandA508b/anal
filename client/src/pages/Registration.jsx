@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import {useRegistrationMutation} from "../redux/auth/authApiSlice";
 import {useNavigate} from "react-router";
+import {Link} from "react-router-dom";
 
 const Registration = () => {
     const [username, setUsername] = useState('')
@@ -15,7 +16,7 @@ const Registration = () => {
 
         if(!!username.length && !!pass.length && !!confirmPass.length && !!email.length && pass===confirmPass){
             await handleRegistration({name:username, email, password:pass})
-            navigate('/dashboard')
+            navigate('/')
         }
     }
     return (
@@ -29,8 +30,9 @@ const Registration = () => {
                         <div className="col s6 logo">
                             <img src="../assets/_con/images/logo-white.png" alt=""/>
                         </div>
-                        <div className="col s6 right-align"><a href="page-sign-in.html">Sign In</a> / <strong>Sign
-                            Up</strong>
+                        <div className="col s6 right-align">
+                            <Link to="/login">Sign In</Link>
+                            / <strong>Sign Up</strong>
                         </div>
                     </div>
 
