@@ -5,7 +5,6 @@ import App from "../App";
 const AuthRequire = () => {
     const token = localStorage.getItem('token')
     const location = useLocation()
-    console.log(token)
     return (
         token ?
             <Outlet/>
